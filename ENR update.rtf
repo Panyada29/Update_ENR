@@ -1,0 +1,400 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="th">\
+<head>\
+  <meta charset="UTF-8" />\
+  <title>Electronic Health Records Feedback</title>\
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet" />\
+  <style>\
+    body \{\
+      font-family: 'Mali', cursive;\
+      background: url('https://img.freepik.com/free-vector/seamless-medical-pattern_23-2148542541.jpg?w=1060&t=st=1718161600~exp=1718162200~hmac=061c4d87cb004758bdc478b4c6f04b1b8e24dfb304517b084e3ce4b1bdfdfb0d') no-repeat center center fixed;\
+      background-size: cover;\
+      background-blend-mode: lighten;\
+      background-color: #fef7ff;\
+      padding: 40px 10px;\
+    \}\
+    .form-container \{\
+      background: rgba(255, 255, 255, 0.95);\
+      border-radius: 20px;\
+      padding: 30px;\
+      max-width: 800px;\
+      margin: auto;\
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);\
+      text-align: center;\
+      position: relative;\
+    \}\
+    .banner-image \{\
+      width: 100%;\
+      border-radius: 20px 20px 0 0;\
+      margin-bottom: 10px;\
+    \}\
+    .header-row \{\
+      display: flex;\
+      justify-content: space-between;\
+      align-items: center;\
+      margin-bottom: 15px;\
+      padding: 0 10px;\
+    \}\
+    .header-row h2 \{\
+      margin: 0;\
+      color: #a984cc;\
+      font-size: 26px;\
+      text-align: left;\
+      flex-grow: 1;\
+    \}\
+    .reset-button \{\
+      background-color: #add8e6;\
+      color: black;\
+      font-weight: bold;\
+      border: none;\
+      padding: 10px 8px;\
+      border-radius: 10px;\
+      cursor: pointer;\
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);\
+      font-size: 16px;\
+      white-space: nowrap;\
+      width: auto;\
+      min-width: 0;\
+      flex-shrink: 0;\
+    \}\
+    .reset-button:hover \{\
+      background-color: #91c8e0;\
+    \}\
+    label \{\
+      display: block;\
+      margin-top: 15px;\
+      color: #555;\
+      text-align: left;\
+      font-size: 18px;\
+    \}\
+    input,\
+    textarea,\
+    select \{\
+      width: 100%;\
+      padding: 12px;\
+      margin-top: 5px;\
+      border: 1px solid #ddd;\
+      border-radius: 10px;\
+      box-sizing: border-box;\
+      background-color: #fdf6ff;\
+      font-size: 18px;\
+    \}\
+    button \{\
+      margin-top: 20px;\
+      width: 100%;\
+      padding: 14px;\
+      background-color: #d5a6bd;\
+      border: none;\
+      color: white;\
+      font-weight: bold;\
+      border-radius: 10px;\
+      cursor: pointer;\
+      transition: background-color 0.3s ease;\
+      font-size: 18px;\
+    \}\
+    button:hover \{\
+      background-color: #b47aa2;\
+    \}\
+    #confirmImagesBtn \{\
+      background-color: #add8e6;\
+      width: auto;\
+      padding: 10px 14px;\
+    \}\
+    #confirmImagesBtn:hover \{\
+      background-color: #91c8e0;\
+    \}\
+    .exit-button \{\
+      background-color: #a984cc;\
+    \}\
+    .exit-button:hover \{\
+      background-color: #8666a8;\
+    \}\
+    .cute-image \{\
+      margin-top: 20px;\
+      max-width: 250px;\
+      width: 100%;\
+      border-radius: 15px;\
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\
+      display: block;\
+      margin-left: auto;\
+      margin-right: auto;\
+    \}\
+    @media (max-width: 600px) \{\
+      .form-container \{\
+        padding: 20px;\
+      \}\
+      .header-row \{\
+        flex-direction: column;\
+        align-items: flex-start;\
+      \}\
+      .reset-button \{\
+        margin-top: 10px;\
+      \}\
+    \}\
+    .hidden \{\
+      display: none;\
+    \}\
+    #waitingBox \{\
+      display: none;\
+      position: fixed;\
+      top: 20px;\
+      left: 50%;\
+      transform: translateX(-50%);\
+      background: #d5a6bd;\
+      color: white;\
+      padding: 10px 20px;\
+      border-radius: 10px;\
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);\
+      z-index: 9999;\
+    \}\
+  </style>\
+</head>\
+<body>\
+  <div class="form-container">\
+    <img src="https://i.postimg.cc/s2tyFm9S/Cream-Green-Organic-Flow-and-Form-Mindfulness-Linked-In-Banner.png" alt="Banner" class="banner-image" />\
+    <div class="header-row">\
+      <h2>\uc0\u3649 \u3610 \u3610 \u3615 \u3629 \u3619 \u3660 \u3617 \u3586 \u3657 \u3629 \u3648 \u3626 \u3609 \u3629 \u3649 \u3609 \u3632 \u3619 \u3632 \u3610 \u3610 \u3648 \u3623 \u3594 \u3619 \u3632 \u3648 \u3610 \u3637 \u3618 \u3609 \u3629 \u3636 \u3648 \u3621 \u3655 \u3585 \u3607 \u3619 \u3629 \u3609 \u3636 \u3585 \u3626 \u3660 </h2>\
+      <button type="button" class="reset-button" onclick="resetForm()">\uc0\u3621 \u3657 \u3634 \u3591 \u3586 \u3657 \u3629 \u3617 \u3641 \u3621 </button>\
+    </div>\
+    <form id="feedbackForm" enctype="multipart/form-data">\
+      <!-- Your form fields go here -->\
+      <label>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 :</label>\
+      <select name="departmentMain" id="departmentMain" required>\
+        <option value="" disabled selected>\uc0\u3585 \u3619 \u3640 \u3603 \u3634 \u3648 \u3621 \u3639 \u3629 \u3585 \u3591 \u3634 \u3609 \u3607 \u3637 \u3656 \u3607 \u3656 \u3634 \u3609 \u3626 \u3633 \u3591 \u3585 \u3633 \u3604 </option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3612 \u3641 \u3657 \u3611 \u3656 \u3623 \u3618 \u3609 \u3629 \u3585  1</option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3612 \u3641 \u3657 \u3611 \u3656 \u3623 \u3618 \u3609 \u3629 \u3585  2</option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3612 \u3641 \u3657 \u3611 \u3656 \u3623 \u3618 \u3609 \u3629 \u3585 \u3619 \u3632 \u3610 \u3610 \u3614 \u3636 \u3648 \u3624 \u3625 </option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3612 \u3641 \u3657 \u3611 \u3656 \u3623 \u3618 \u3651 \u3609  1</option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3612 \u3641 \u3657 \u3611 \u3656 \u3623 \u3618 \u3651 \u3609  2</option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3612 \u3641 \u3657 \u3611 \u3656 \u3623 \u3618 \u3651 \u3609  3</option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3612 \u3641 \u3657 \u3611 \u3656 \u3623 \u3618 \u3651 \u3609 \u3619 \u3632 \u3610 \u3610 \u3614 \u3636 \u3648 \u3624 \u3625  1</option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3612 \u3641 \u3657 \u3611 \u3656 \u3623 \u3618 \u3651 \u3609 \u3619 \u3632 \u3610 \u3610 \u3614 \u3636 \u3648 \u3624 \u3625  2</option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3612 \u3641 \u3657 \u3611 \u3656 \u3623 \u3618 \u3648 \u3604 \u3655 \u3585 </option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3623 \u3636 \u3585 \u3620 \u3605  1</option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3623 \u3636 \u3585 \u3620 \u3605  2</option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3627 \u3657 \u3629 \u3591 \u3612 \u3656 \u3634 \u3605 \u3633 \u3604 </option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3626 \u3609 \u3633 \u3610 \u3626 \u3609 \u3640 \u3609 \u3585 \u3634 \u3619 \u3619 \u3633 \u3585 \u3625 \u3634 </option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3610 \u3619 \u3636 \u3627 \u3634 \u3619 \u3613 \u3656 \u3634 \u3618 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 </option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3623 \u3636 \u3592 \u3633 \u3618  \u3609 \u3623 \u3633 \u3605 \u3585 \u3619 \u3619 \u3617  \u3585 \u3634 \u3619 \u3592 \u3633 \u3604 \u3585 \u3634 \u3619 \u3588 \u3623 \u3634 \u3617 \u3619 \u3641 \u3657 \u3649 \u3621 \u3632 \u3626 \u3634 \u3619 \u3626 \u3609 \u3648 \u3607 \u3624 \u3607 \u3634 \u3591 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 </option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3610 \u3619 \u3636 \u3627 \u3634 \u3619 \u3649 \u3621 \u3632 \u3614 \u3633 \u3602 \u3609 \u3634 \u3610 \u3640 \u3588 \u3621 \u3634 \u3585 \u3619 \u3607 \u3634 \u3591 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 </option>\
+        <option>\uc0\u3591 \u3634 \u3609 \u3614 \u3633 \u3602 \u3609 \u3634 \u3588 \u3640 \u3603 \u3616 \u3634 \u3614 \u3607 \u3634 \u3591 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 </option>\
+        <option>\uc0\u3613 \u3656 \u3634 \u3618 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621  \u3650 \u3619 \u3591 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3619 \u3634 \u3617 \u3634 \u3608 \u3636 \u3610 \u3604 \u3637 </option>\
+        <option>\uc0\u3612 \u3641 \u3657 \u3611 \u3599 \u3636 \u3610 \u3633 \u3605 \u3636 \u3585 \u3634 \u3619 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 \u3586 \u3633 \u3657 \u3609 \u3626 \u3641 \u3591  (APN)</option>\
+        <option value="\uc0\u3629 \u3639 \u3656 \u3609 \u3654 ">\u3629 \u3639 \u3656 \u3609 \u3654 </option>\
+      </select>\
+      <input type="text" id="departmentOther" name="departmentOther" class="hidden" placeholder="\uc0\u3585 \u3619 \u3640 \u3603 \u3634 \u3619 \u3632 \u3610 \u3640 \u3591 \u3634 \u3609 \u3629 \u3639 \u3656 \u3609 \u3654 " />\
+\
+\
+      <label>\uc0\u3627 \u3609 \u3656 \u3623 \u3618 \u3591 \u3634 \u3609 :</label>\
+      <input list="unitList" type="text" name="unit" id="unitInput" placeholder="\uc0\u3651 \u3626 \u3656 \u3619 \u3627 \u3633 \u3626 \u3627 \u3609 \u3656 \u3623 \u3618 \u3591 \u3634 \u3609 \u3586 \u3629 \u3591 \u3607 \u3656 \u3634 \u3609 " required />\
+      <datalist id="unitList"></datalist>\
+\
+\
+      <label>\uc0\u3605 \u3635 \u3649 \u3627 \u3609 \u3656 \u3591 \u3586 \u3629 \u3591 \u3612 \u3641 \u3657 \u3651 \u3594 \u3657 \u3591 \u3634 \u3609 :</label>\
+      <select name="position" id="position" required>\
+        <option value="" disabled selected>\uc0\u3585 \u3619 \u3640 \u3603 \u3634 \u3648 \u3621 \u3639 \u3629 \u3585 \u3605 \u3635 \u3649 \u3627 \u3609 \u3656 \u3591 \u3586 \u3629 \u3591 \u3607 \u3656 \u3634 \u3609 </option>\
+        <option>\uc0\u3627 \u3633 \u3623 \u3627 \u3609 \u3657 \u3634 \u3591 \u3634 \u3609 </option>\
+        <option>\uc0\u3612 \u3641 \u3657 \u3605 \u3619 \u3623 \u3592 \u3585 \u3634 \u3619 </option>\
+        <option>\uc0\u3627 \u3633 \u3623 \u3627 \u3609 \u3657 \u3634 \u3627 \u3629 \u3612 \u3641 \u3657 \u3611 \u3656 \u3623 \u3618 </option>\
+        <option>\uc0\u3614 \u3618 \u3634 \u3610 \u3634 \u3621 </option>\
+        <option>\uc0\u3612 \u3641 \u3657 \u3594 \u3656 \u3623 \u3618 \u3614 \u3618 \u3634 \u3610 \u3634 \u3621 </option>\
+        <option>\uc0\u3608 \u3640 \u3619 \u3585 \u3634 \u3619 </option>\
+        <option>\uc0\u3648 \u3592 \u3657 \u3634 \u3627 \u3609 \u3657 \u3634 \u3607 \u3637 \u3656 \u3611 \u3599 \u3636 \u3610 \u3633 \u3605 \u3636 \u3585 \u3634 \u3619 \u3610 \u3619 \u3636 \u3627 \u3634 \u3619 </option>\
+        <option value="\uc0\u3629 \u3639 \u3656 \u3609 \u3654 ">\u3629 \u3639 \u3656 \u3609 \u3654 </option>\
+      </select>\
+      <input type="text" id="positionOther" name="positionOther" class="hidden" placeholder="\uc0\u3585 \u3619 \u3640 \u3603 \u3634 \u3619 \u3632 \u3610 \u3640 \u3605 \u3635 \u3649 \u3627 \u3609 \u3656 \u3591 \u3629 \u3639 \u3656 \u3609 \u3654 " />\
+\
+\
+      <label>\uc0\u3623 \u3633 \u3609 \u3607 \u3637 \u3656 \u3614 \u3610 \u3611 \u3633 \u3597 \u3627 \u3634 :</label>\
+      <input type="date" name="date" required />\
+\
+\
+       <label>\uc0\u3588 \u3623 \u3634 \u3617 \u3588 \u3636 \u3604 \u3648 \u3627 \u3655 \u3609 :</label>\
+      <textarea name="comments" rows="4" placeholder="\uc0\u3585 \u3619 \u3629 \u3585 \u3588 \u3623 \u3634 \u3617 \u3588 \u3636 \u3604 \u3648 \u3627 \u3655 \u3609 \u3607 \u3637 \u3656 \u3609 \u3637 \u3656 ..." required></textarea>\
+     \
+      <label>\uc0\u3649 \u3609 \u3610 \u3619 \u3641 \u3611 \u3616 \u3634 \u3614  (\u3648 \u3621 \u3639 \u3629 \u3585 \u3652 \u3604 \u3657 \u3626 \u3641 \u3591 \u3626 \u3640 \u3604  5 \u3619 \u3641 \u3611 ):</label>\
+      <input type="file" id="imageInput" accept="image/*" multiple />\
+      <button type="button" id="confirmImagesBtn" style="margin-top:10px; background-color:#b47aa2;">\uc0\u3618 \u3639 \u3609 \u3618 \u3633 \u3609 \u3619 \u3641 \u3611 \u3616 \u3634 \u3614 </button>\
+      <div id="imageStatus" style="margin-top:8px; color:#666;"></div>\
+\
+\
+        <label>\uc0\u3648 \u3610 \u3629 \u3619 \u3660 \u3650 \u3607 \u3619 \u3624 \u3633 \u3614 \u3607 \u3660 \u3607 \u3637 \u3656 \u3605 \u3636 \u3604 \u3605 \u3656 \u3629 \u3652 \u3604 \u3657 :</label>\
+<input type="text" name="contactNumber" id="contactNumber" placeholder="\uc0\u3619 \u3632 \u3610 \u3640 \u3648 \u3610 \u3629 \u3619 \u3660 \u3650 \u3607 \u3619 \u3624 \u3633 \u3614 \u3607 \u3660 \u3627 \u3609 \u3656 \u3623 \u3618 \u3591 \u3634 \u3609  \u3627 \u3619 \u3639 \u3629 \u3648 \u3610 \u3629 \u3619 \u3660 \u3617 \u3639 \u3629 \u3606 \u3639 \u3629 " required />\
+\
+\
+\
+\
+\
+\
+      <button type="submit">\uc0\u3626 \u3656 \u3591 \u3586 \u3657 \u3629 \u3648 \u3626 \u3609 \u3629 \u3649 \u3609 \u3632 </button>\
+      <button class="exit-button" type="button" onclick="exitPage()">\uc0\u3588 \u3621 \u3636 \u3585 \u3648 \u3614 \u3639 \u3656 \u3629 \u3629 \u3629 \u3585 \u3592 \u3634 \u3585 \u3627 \u3609 \u3657 \u3634 \u3609 \u3637 \u3657 </button>\
+      <img src="https://img.freepik.com/free-vector/hand-drawn-doctors-nurses_23-2148917433.jpg" alt="Cute nurse cartoon" class="cute-image" />\
+    </form>\
+  </div>\
+\
+\
+  <div id="waitingBox">\uc0\u3585 \u3619 \u3640 \u3603 \u3634 \u3619 \u3629 \u3626 \u3633 \u3585 \u3588 \u3619 \u3641 \u3656 ...</div>\
+\
+\
+  <script>\
+    const form = document.getElementById("feedbackForm");\
+    const departmentMain = document.getElementById("departmentMain");\
+    const departmentOther = document.getElementById("departmentOther");\
+    const position = document.getElementById("position");\
+    const positionOther = document.getElementById("positionOther");\
+    const imageInput = document.getElementById("imageInput");\
+    const confirmImagesBtn = document.getElementById("confirmImagesBtn");\
+    const imageStatus = document.getElementById("imageStatus");\
+    const waitingBox = document.getElementById("waitingBox");\
+    const unitInput = document.getElementById("unitInput");\
+    const unitList = document.getElementById("unitList");\
+\
+\
+    let imagesConfirmed = false;\
+\
+\
+    departmentMain.addEventListener("change", () => \{\
+      const dept = departmentMain.value;\
+      if (dept === "\uc0\u3629 \u3639 \u3656 \u3609 \u3654 ") \{\
+        departmentOther.classList.remove("hidden");\
+        departmentOther.required = true;\
+      \} else \{\
+        departmentOther.classList.add("hidden");\
+        departmentOther.required = false;\
+\
+\
+        unitList.innerHTML = "";\
+        unitInput.value = "";\
+        google.script.run.withSuccessHandler(units => \{\
+          if (units.length === 0) \{\
+            unitInput.setAttribute("disabled", "disabled");\
+            unitInput.placeholder = "\uc0\u3627 \u3609 \u3656 \u3623 \u3618 \u3591 \u3634 \u3609 \u3652 \u3617 \u3656 \u3617 \u3637 \u3626 \u3635 \u3627 \u3619 \u3633 \u3610 \u3591 \u3634 \u3609 \u3609 \u3637 \u3657 ";\
+          \} else \{\
+            unitInput.removeAttribute("disabled");\
+            unitInput.placeholder = "\uc0\u3651 \u3626 \u3656 \u3619 \u3627 \u3633 \u3626 \u3627 \u3609 \u3656 \u3623 \u3618 \u3591 \u3634 \u3609 \u3586 \u3629 \u3591 \u3607 \u3656 \u3634 \u3609 ";\
+            units.forEach(unit => \{\
+              const option = document.createElement("option");\
+              option.value = unit;\
+              unitList.appendChild(option);\
+            \});\
+          \}\
+        \}).getUnitsByDepartment(dept);\
+      \}\
+    \});\
+\
+\
+    position.addEventListener("change", () => \{\
+      if (position.value === "\uc0\u3629 \u3639 \u3656 \u3609 \u3654 ") \{\
+        positionOther.classList.remove("hidden");\
+        positionOther.required = true;\
+      \} else \{\
+        positionOther.classList.add("hidden");\
+        positionOther.required = false;\
+      \}\
+    \});\
+\
+\
+    confirmImagesBtn.addEventListener('click', () => \{\
+      const count = imageInput.files.length;\
+      if (count === 0) \{\
+        alert('\uc0\u3618 \u3633 \u3591 \u3652 \u3617 \u3656 \u3652 \u3604 \u3657 \u3648 \u3621 \u3639 \u3629 \u3585 \u3652 \u3615 \u3621 \u3660 \u3619 \u3641 \u3611 \u3616 \u3634 \u3614 \u3651 \u3604 \u3654 ');\
+        imagesConfirmed = false;\
+        imageStatus.textContent = '';\
+      \} else if (count > 5) \{\
+        alert('\uc0\u3585 \u3619 \u3640 \u3603 \u3634 \u3648 \u3621 \u3639 \u3629 \u3585 \u3652 \u3615 \u3621 \u3660 \u3619 \u3641 \u3611 \u3616 \u3634 \u3614 \u3652 \u3617 \u3656 \u3648 \u3585 \u3636 \u3609  5 \u3619 \u3641 \u3611 ');\
+        imagesConfirmed = false;\
+        imageStatus.textContent = '';\
+      \} else \{\
+        alert(`\uc0\u3588 \u3640 \u3603 \u3652 \u3604 \u3657 \u3648 \u3621 \u3639 \u3629 \u3585 \u3652 \u3615 \u3621 \u3660 \u3619 \u3641 \u3611 \u3616 \u3634 \u3614  $\{count\} \u3619 \u3641 \u3611 `);\
+        imagesConfirmed = true;\
+        imageStatus.textContent = `\uc0\u3619 \u3641 \u3611 \u3616 \u3634 \u3614 \u3607 \u3637 \u3656 \u3648 \u3621 \u3639 \u3629 \u3585 : $\{count\} \u3619 \u3641 \u3611  \u3614 \u3619 \u3657 \u3629 \u3617 \u3626 \u3656 \u3591 \u3649 \u3621 \u3657 \u3623 `;\
+      \}\
+    \});\
+\
+\
+    form.addEventListener("submit", (e) => \{\
+      e.preventDefault();\
+      if (!imagesConfirmed && imageInput.files.length > 0) \{\
+        alert('\uc0\u3585 \u3619 \u3640 \u3603 \u3634 \u3585 \u3604 \u3611 \u3640 \u3656 \u3617  "\u3618 \u3639 \u3609 \u3618 \u3633 \u3609 \u3619 \u3641 \u3611 \u3616 \u3634 \u3614 " \u3585 \u3656 \u3629 \u3609 \u3626 \u3656 \u3591 \u3649 \u3610 \u3610 \u3615 \u3629 \u3619 \u3660 \u3617 ');\
+        return;\
+      \}\
+      if (imageInput.files.length > 5) \{\
+        alert("\uc0\u3585 \u3619 \u3640 \u3603 \u3634 \u3648 \u3621 \u3639 \u3629 \u3585 \u3652 \u3615 \u3621 \u3660 \u3619 \u3641 \u3611 \u3616 \u3634 \u3614 \u3652 \u3617 \u3656 \u3648 \u3585 \u3636 \u3609  5 \u3619 \u3641 \u3611 ");\
+        return;\
+      \}\
+      waitingBox.style.display = "block";\
+\
+\
+     const data = \{\
+  department: departmentMain.value === "\uc0\u3629 \u3639 \u3656 \u3609 \u3654 " ? departmentOther.value : departmentMain.value,\
+  unit: form.unit.value,\
+  position: position.value === "\uc0\u3629 \u3639 \u3656 \u3609 \u3654 " ? positionOther.value : position.value,\
+  date: form.date.value,\
+  comments: form.comments.value,\
+  contactNumber: form.contactNumber.value,  // <=== Add this line!\
+  images: []\
+\};\
+\
+\
+      const fileReaders = [];\
+      for (let i = 0; i < imageInput.files.length; i++) \{\
+        const file = imageInput.files[i];\
+        fileReaders.push(new Promise((resolve, reject) => \{\
+          const reader = new FileReader();\
+          reader.onload = (event) => resolve(\{ data: event.target.result \});\
+          reader.onerror = (err) => reject(err);\
+          reader.readAsDataURL(file);\
+        \}));\
+      \}\
+      Promise.all(fileReaders)\
+        .then((images) => \{\
+          data.images = images;\
+          google.script.run.withSuccessHandler(() => \{\
+            waitingBox.style.display = "none";\
+            alert("\uc0\u3626 \u3656 \u3591 \u3586 \u3657 \u3629 \u3648 \u3626 \u3609 \u3629 \u3649 \u3609 \u3632 \u3648 \u3619 \u3637 \u3618 \u3610 \u3619 \u3657 \u3629 \u3618 \u3649 \u3621 \u3657 \u3623  \u3586 \u3629 \u3610 \u3588 \u3640 \u3603 \u3588 \u3656 \u3632 !");\
+            form.reset();\
+            departmentOther.classList.add("hidden");\
+            positionOther.classList.add("hidden");\
+            imagesConfirmed = false;\
+            imageStatus.textContent = '';\
+          \}).withFailureHandler((err) => \{\
+            waitingBox.style.display = "none";\
+            alert("\uc0\u3648 \u3585 \u3636 \u3604 \u3586 \u3657 \u3629 \u3612 \u3636 \u3604 \u3614 \u3621 \u3634 \u3604 : " + err.message);\
+          \}).submitFeedback(data);\
+        \})\
+        .catch((error) => \{\
+          waitingBox.style.display = "none";\
+          alert("\uc0\u3648 \u3585 \u3636 \u3604 \u3586 \u3657 \u3629 \u3612 \u3636 \u3604 \u3614 \u3621 \u3634 \u3604 \u3651 \u3609 \u3585 \u3634 \u3619 \u3629 \u3656 \u3634 \u3609 \u3652 \u3615 \u3621 \u3660 \u3619 \u3641 \u3611 \u3616 \u3634 \u3614 : " + error.message);\
+        \});\
+    \});\
+\
+\
+    function exitPage() \{\
+      window.close();\
+      setTimeout(() => \{\
+        window.location.href = "about:blank";\
+      \}, 300);\
+    \}\
+\
+\
+    function resetForm() \{\
+      form.reset();\
+      departmentOther.classList.add("hidden");\
+      positionOther.classList.add("hidden");\
+      imageStatus.textContent = '';\
+      imagesConfirmed = false;\
+    \}\
+  </script>\
+</body>\
+</html>\
+\
+\
+\
+}
